@@ -18,7 +18,7 @@ function model(sequelize){
         }},
         ngayGui : {type : DataTypes.DATEONLY , defaultValue :DataTypes.NOW},
         vaiTro : {type : DataTypes.STRING},
-        trangThai : {type: DataTypes.STRING}
+        trangThai : {type: DataTypes.STRING , defaultValue : "CHUAXEM"}
     };
     return sequelize.define('VanBanGuiNhan',attributes);
 }

@@ -10,8 +10,9 @@ function model(sequelize){
         capDo : {type: DataTypes.STRING},
         baoMat : {type: DataTypes.STRING},
         soDen : {type: DataTypes.STRING},
-        hanXuLy : {type: DataTypes.DATE},
+        hanXuLy : {type: DataTypes.DATEONLY},
         trangThai : {type: DataTypes.STRING},
+        file : {type: DataTypes.STRING},
         idLanhDao : {type: DataTypes.INTEGER,allowNull: false, references: {
             model: 'NguoiDungs',
             key: 'id'

@@ -3,5 +3,8 @@ const router = express.Router();
 const TaiKhoan = require('../controllers/taikhoan.controller');
 
 router.post('/themTaiKhoan',TaiKhoan.themTaiKhoan);
-router.get('/getTaiKhoanByName/:tenTaiKhoan',TaiKhoan.timTaiKhoanTheoTen);
+router.get('/timTaiKhoanTheoTen/:tenTaiKhoan',TaiKhoan.timTaiKhoanTheoTen);
+router.put('/capNhatMatKhau/:id',TaiKhoan.capNhatMatKhau);
+router.get('/xuatTatCaTaiKhoan',TaiKhoan.xuatTatCaTaiKhoan);
+
 module.exports = router;

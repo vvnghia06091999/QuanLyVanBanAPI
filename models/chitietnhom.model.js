@@ -4,11 +4,11 @@ module.exports = model;
 
 function model(sequelize){
     const attributes = {
-        idNhom : {type: DataTypes.INTEGER,allowNull: false, references: {
+        idNhom : {type: DataTypes.INTEGER,allowNull: false,primaryKey: true, references: {
             model: 'Nhoms',
             key: 'id'
         }},
-        idNguoiDung : {type: DataTypes.INTEGER,allowNull: false, references: {
+        idNguoiDung : {type: DataTypes.INTEGER,allowNull: false,primaryKey: true, references: {
             model: 'NguoiDungs',
             key: 'id'
         }}

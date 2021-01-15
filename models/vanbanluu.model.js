@@ -14,5 +14,5 @@ function model(sequelize){
         }},
         ghiChu : {type : DataTypes.STRING}
     };
-    return sequelize.define('VanBanGuiNhans',attributes);
+    return sequelize.define('VanBanLuu',attributes);
 }

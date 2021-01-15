@@ -1,7 +1,6 @@
-const express = require('express');
 const { Op } = require("sequelize");
 
-const db = require('../models/index');
+const db = require('../models/database');
 
 function themTaiKhoan(req, res){
     const taiKhoan = {
@@ -30,6 +29,35 @@ function timTaiKhoanTheoTen(req, res){
     });
 }
 
-//function 
+function capNhatMatKhau(req, res) {
+    const id = req.params.id;
+    db.taikhoan.update(req.body,{
+        where : {id : id}
+    }).then(num =>{
+        if(num == 1){
+            res.send({
+                message : "Cap nhat thanh cong"
+            });
+        }else{
+            res.send({
+                message : "Cap nhat khong thanh cong"
+            })
+        }
+    }).catch(err =>{
+        res.status(500).send({
+            message : err.message || "Khong The Cap Nhat Mat Khau id " + id
+        });
+    });
+}
 
-module.exports = {themTaiKhoan,timTaiKhoanTheoTen};
+function xuatTatCaTaiKhoan(req, res){
+    db.taikhoan.findAll().then(data =>{
+        res.send(data);
+    }).catch(err =>{
+        res.status(500).send({
+            message : err.message || "Khong the xuat tat ca"
+        });
+    });
+}
+
+module.exports = {themTaiKhoan,timTaiKhoanTheoTen,capNhatMatKhau,xuatTatCaTaiKhoan};

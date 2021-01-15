@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:3000"
 };
   
 app.use(cors(corsOptions));
@@ -20,11 +20,22 @@ app.get("/", (req, res) => {
 });
 
 app.use("/taikhoan",require('./routers/taikhoan.router'));
+app.use("/chitietnhom",require('./routers/chitietnhom.router'));
+app.use("/chucvu",require('./routers/chucvu.router'));
+app.use("/donvi",require('./routers/donvi.router'));
+app.use("/linhvucvanban",require('./routers/linhvucvanban.router'));
+app.use("/loaivanban",require('./routers/loaivanban.router'));
+app.use("/nguoidung",require('./routers/nguoidung.router'));
+app.use("/nhom",require('./routers/nhom.router'));
+app.use("/phongban",require('./routers/phongban.router'));
+app.use("/vanban",require('./routers/vanban.router'));
+app.use("/vanbanguinhan",require('./routers/vanbanguinhan.router'));
+app.use("/vanbanluu",require('./routers/vanbanluu.router'));
 
-const db = require("./models/index");
+const db = require("./models/database");
 db.sequelize.sync();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORTAPI || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
