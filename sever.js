@@ -31,6 +31,7 @@ app.use("/phongban",require('./routers/phongban.router'));
 app.use("/vanban",require('./routers/vanban.router'));
 app.use("/vanbanguinhan",require('./routers/vanbanguinhan.router'));
 app.use("/vanbanluu",require('./routers/vanbanluu.router'));
+app.use("/chiTietVanBanGuiNhan",require('./routers/chiTietVanBanGuiNhan.router'));
 
 const db = require("./models/database");
 db.sequelize.sync();

@@ -5,10 +5,7 @@ const db = require('../models/database');
 function themVanBanGuiNhan(req, res){
     const vanBanGuiNhan = {
         idNguoiGui :  req.body.idNguoiGui,
-        idNguoiNhan : req.body.idNguoiNhan,
-        idVanBan : req.body.idVanBan,
-        vaiTro : req.body.vaiTro,
-        trangThai : req.body.trangThai,
+        idVanBan : req.body.idVanBan
     };
     db.vanbanguinhan.create(vanBanGuiNhan).then(data => {
         res.send(data);
@@ -19,18 +16,6 @@ function themVanBanGuiNhan(req, res){
     });
 }
 
-function timVanBanGuiNhanTheoNguoiNhan(req, res){
-    const idNguoiNhan = req.params.idNguoiNhan;
-    db.vanbanguinhan.findAll({
-        where : {idNguoiNhan : idNguoiNhan},
-    }).then(data =>{
-        res.send(data);
-    }).catch(err =>{
-        res.status(500).send({
-            message : err.message || "Khong Tim Thay"
-        });
-    });
-}
 function timVanBanGuiNhanTheoNguoiGui(req, res){
     const idNguoiGui = req.params.idNguoiGui;
     db.vanbanguinhan.findAll({
@@ -65,4 +50,4 @@ function capNhatVanBanGuiNhan(req, res) {
     });
 }
 
-module.exports = {themVanBanGuiNhan,capNhatVanBanGuiNhan,timVanBanGuiNhanTheoNguoiGui,timVanBanGuiNhanTheoNguoiNhan};
+module.exports = {themVanBanGuiNhan,capNhatVanBanGuiNhan,timVanBanGuiNhanTheoNguoiGui};

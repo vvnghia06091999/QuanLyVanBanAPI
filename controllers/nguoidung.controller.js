@@ -73,5 +73,17 @@ function xuatTatCaNguoiDung(req,res) {
         })
     });
 }
+function timNguoiDungTheoIDTaiKhoan(req, res){
+    const idTaiKhoan = req.params.idTaiKhoan;
+    db.nguoidung.findOne({
+        where : {idTaiKhoan : idTaiKhoan}
+    }).then(data =>{
+        res.send(data);
+    }).catch(err =>{
+        res.status(500).send({
+            message : err.message || "Khong Tim Thay"
+        });
+    });
+}
 
-module.exports = {themNguoiDung,capNhatNguoiDung,timNguoiDungTheoID,timNguoiDungTheoPhongBan,xuatTatCaNguoiDung};
+module.exports = {themNguoiDung,capNhatNguoiDung,timNguoiDungTheoID,timNguoiDungTheoPhongBan,xuatTatCaNguoiDung,timNguoiDungTheoIDTaiKhoan};

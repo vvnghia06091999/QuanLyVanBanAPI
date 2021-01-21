@@ -60,4 +60,23 @@ function xuatTatCaTaiKhoan(req, res){
     });
 }
 
-module.exports = {themTaiKhoan,timTaiKhoanTheoTen,capNhatMatKhau,xuatTatCaTaiKhoan};
+function dangNhap(req, res){
+    const {tenTaiKhoan,matKhau} = req.body;
+    db.taikhoan.findOne({
+        where : {tenTaiKhoan : tenTaiKhoan}
+    }).then(data => {
+        if(data.matKhau == matKhau){
+            res.send(data);
+        }else{
+            res.status(210).send({
+                message : "Sai ten tai khoan hoac mat khau"
+            })
+        }
+    }).catch(err => {
+        res.status(210).send({
+            message : "Sai ten tai khoan hoac mat khau"
+        })
+    });
+}
+
+module.exports = {themTaiKhoan,timTaiKhoanTheoTen,capNhatMatKhau,xuatTatCaTaiKhoan,dangNhap};

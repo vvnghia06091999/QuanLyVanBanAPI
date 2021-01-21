@@ -31,5 +31,6 @@ db.linhvucvanban = require('./linhvucvanban.model')(sequelize);
 db.vanban = require('./vanban.model')(sequelize);
 db.vanbanguinhan = require('./vanbanguinhan.model')(sequelize);
 db.vanbanluu = require('./vanbanluu.model')(sequelize);
+db.chitietvanbanguinhan = require('./chitietvanbanguinhan.model')(sequelize);
 
 module.exports = db;

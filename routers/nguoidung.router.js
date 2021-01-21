@@ -7,5 +7,6 @@ router.put('/capNhatNguoiDung/:id',NguoiDung.capNhatNguoiDung);
 router.get('/timNguoiDungTheoID/:id',NguoiDung.timNguoiDungTheoID);
 router.get('/timNguoiDungTheoPhongBan/:idPhongBan',NguoiDung.timNguoiDungTheoPhongBan);
 router.get('/xuatTatCaNguoiDung',NguoiDung.xuatTatCaNguoiDung);
+router.get('/timNguoiDungTheoIDTaiKhoan/:idTaiKhoan',NguoiDung.timNguoiDungTheoIDTaiKhoan);
 
 module.exports = router;
