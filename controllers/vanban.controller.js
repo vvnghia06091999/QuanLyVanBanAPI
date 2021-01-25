@@ -15,7 +15,8 @@ function themVanBan(req, res){
         file : req.body.file,
         idLanhDao : req.body.idLanhDao,
         idLoaiVanBan : req.body.idLoaiVanBan,
-        idLinhVucVanBan : req.body.idLinhVucVanBan
+        idLinhVucVanBan : req.body.idLinhVucVanBan,
+        idNguoiTao : req.body.idNguoiTao
     }
     db.vanban.create(vanBan).then(data =>{
         res.send(data);

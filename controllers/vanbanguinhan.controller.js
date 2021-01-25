@@ -5,7 +5,10 @@ const db = require('../models/database');
 function themVanBanGuiNhan(req, res){
     const vanBanGuiNhan = {
         idNguoiGui :  req.body.idNguoiGui,
-        idVanBan : req.body.idVanBan
+        idVanBan : req.body.idVanBan,
+        noiDung : req.body.noiDung,
+        yKienXuLy : req.body.yKienXuLy,
+        trangThai : req.body.trangThai
     };
     db.vanbanguinhan.create(vanBanGuiNhan).then(data => {
         res.send(data);

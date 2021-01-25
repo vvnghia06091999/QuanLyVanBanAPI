@@ -24,6 +24,10 @@ function model(sequelize){
         idLinhVucVanBan : {type: DataTypes.INTEGER,allowNull: false, references: {
             model: 'LinhVucVanBans',
             key: 'id'
+        }},
+        idNguoiTao : {type: DataTypes.INTEGER,allowNull: false, references: {
+            model: 'NguoiDungs',
+            key: 'id'
         }}
     };
     return sequelize.define('VanBan',attributes);

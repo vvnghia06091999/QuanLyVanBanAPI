@@ -12,7 +12,10 @@ function model(sequelize){
             model: 'VanBans',
             key: 'id'
         }},
-        ngayGui : {type : DataTypes.DATEONLY , defaultValue :DataTypes.NOW}
+        ngayGui : {type : DataTypes.DATEONLY , defaultValue :DataTypes.NOW},
+        noiDung : {type : DataTypes.STRING},
+        yKienXuLy : {type : DataTypes.STRING},
+        trangThai : {type: DataTypes.STRING}
     };
     return sequelize.define('VanBanGuiNhan',attributes);
 }

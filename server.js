@@ -36,7 +36,7 @@ app.use("/chiTietVanBanGuiNhan",require('./routers/chiTietVanBanGuiNhan.router')
 const db = require("./models/database");
 db.sequelize.sync();
 
-const PORT = process.env.PORTAPI || 8080;
+const PORT = process.env.PORTAPI;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
