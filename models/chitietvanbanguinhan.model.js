@@ -13,7 +13,7 @@ function model(sequelize){
             key: 'id'
         }},
         vaiTro : {type : DataTypes.STRING},
-        trangThai : {type: DataTypes.STRING , defaultValue : "CHUAXEM"}
+        trangThai : {type: DataTypes.STRING , defaultValue : "Chưa Xem"}
     };
     return sequelize.define('ChiTietVanBanGuiNhan',attributes);
 }
