@@ -53,4 +53,17 @@ function capNhatVanBanGuiNhan(req, res) {
     });
 }
 
-module.exports = {themVanBanGuiNhan,capNhatVanBanGuiNhan,timVanBanGuiNhanTheoNguoiGui};
+function timVanBanGuiNhanTheoID(req, res){
+    const id = req.params.id;
+    db.vanbanguinhan.findOne({
+        where: {id : id}
+    }).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.status(500).send({
+            message : err.message || "Ko Tim Thay"
+        })
+    })
+}
+
+module.exports = {themVanBanGuiNhan,capNhatVanBanGuiNhan,timVanBanGuiNhanTheoNguoiGui,timVanBanGuiNhanTheoID};
